@@ -7,7 +7,9 @@ name = "kujira"
 version = "0.1.0"
 description = "Live, editable analytics."
 authors = [{name = "Abitpal Gyawali", email = "agyawali@utexas.edu"}]
-dependencies = []
+dependencies = [
+    "colorama>=0.4.4"
+]
 
 
 [tool.setuptools]

@@ -5,3 +5,4 @@ def collect(xs): #function / class has to be called collect (if a class, __call_
     #anything within this function can be changed real time 
     ys = np.sin(xs)
     print(ys)
+    # print(ys / 0)

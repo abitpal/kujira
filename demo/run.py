@@ -2,7 +2,7 @@ import kujira
 import time
 import numpy as np
 
-path = "/Users/abitpalgyawali/Documents/projects/kujira/demo/analytics1.py"
+path = "analytics.py"
 run = kujira.init(analytics_file=path)
 
 #simple demo -- feel free to mess around

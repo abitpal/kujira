@@ -2,8 +2,7 @@ import os
 import traceback
 import importlib
 import sys
-import time
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 
 
 class Run:
@@ -12,6 +11,7 @@ class Run:
 		sys.path.append(analytics_file)  #needed for importing the programs in the analytics file
 		self.prev_edit = self._get_time()  #get the time of last edit 
 		self._get_analytics()
+		self.logs = {}
 
 	def _get_analytics(self): 
 		spec = importlib.util.spec_from_file_location('analytics', self.analytics_file) 
@@ -28,6 +28,9 @@ class Run:
 	def _get_time(self):
 		return os.stat(self.analytics_file).st_ctime
 	
+	def get_logged(self):
+		pass
+	
 	def __call__(self, *args, **kwargs):
 		
 		forced = False
@@ -35,7 +38,7 @@ class Run:
 		while True: 
 			try:  #runs the arguments on the analytics code
 				self._update_analytics(forced)
-				self.analytics(*args, **kwargs)
+				logs = self.analytics(*args, **kwargs)
 				break
 			except Exception: #if there's an error, we stop the program and let the user fix
 				print('---------------------------------\n\n' + Fore.RED + traceback.format_exc())
@@ -44,8 +47,7 @@ class Run:
 
 				retry = input(Fore.BLUE + "Click 'Enter' to re-try the program: " + Style.RESET_ALL)
 				print('\n')
-				forced = True
-
+				forced = True 
 
 
 

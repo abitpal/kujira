@@ -9,8 +9,7 @@ def init(
 	project: str | None = None,
     ) -> Run:
 
+	#TODO: potentially do things like account set up
+
 	run = Run(analytics_file) #just returns the Run 
 	return run
-
-
-
