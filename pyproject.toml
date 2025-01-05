@@ -6,7 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "kujira"
 version = "0.1.0"
 description = "Live, editable analytics."
-authors = [{name = "Abitpal Gyawali", email = "agyawali@utexas.edu"}, {name = "Varun Ragunath"}]
+authors = [{name = "Abitpal Gyawali", email = "agyawali@utexas.edu"}]
 dependencies = []
 
 
+[tool.setuptools]
+packages = ["kujira"]  # List of package directories
