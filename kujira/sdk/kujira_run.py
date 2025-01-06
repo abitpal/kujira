@@ -26,7 +26,7 @@ class Run:
 	
 	#returns the time of last edit
 	def _get_time(self):
-		return os.stat(self.analytics_file).st_ctime
+		return os.stat(self.analytics_file).st_mtime
 	
 	def get_logged(self):
 		pass
